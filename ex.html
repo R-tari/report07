@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <title>평가7</title>
+    <style>
+        *
+        {
+         box-sizing: border-box;
+         margin:0;
+         padding:0;
+        }
+        h1,h2,h3,h4,h5,h6
+        {
+            font-weight:400;
+            font-size:1rem;
+        }
+        ul,li,ol
+        {
+            list-style:none;
+        }
+        a
+        {
+            text-decoration: none;
+            color:#000;
+        }
+        img
+        {
+            vertical-align: top;
+            width:100%;
+        }
+        :root
+        {
+            font-family:'Noto Sans KR',sans-serif;
+            font-weight:400;
+            font-size:14px;
+            color:#000;
+            line-height:1.5;
+        }
+        .clearfix::after
+        {
+            display:block;
+            content:'';
+            clear:both;
+        }
+        .f-left
+        {
+            float:left;
+        }
+
+        .f-right
+        {
+            float:right;
+        }
+
+        .container
+        {
+            max-width:1200px;
+            margin:0 auto;
+        }
+        
+        .header .container
+        {
+            width:100%;
+            position:relative;
+            height:100px;
+            
+            z-index:100;
+        }
+
+        .logo
+        {
+            line-height:100px;
+            padding-left:4rem;
+            font-weight:700;
+            font-size:2rem;
+        }
+        .nav
+        {
+            margin-top:50px;
+            padding-right:3rem;
+        }
+
+        .main-menu h2
+        {
+            display: none;
+        }
+
+        .main-menu li
+        {
+            display:inline-block;
+            padding:0.8rem 38px;
+            font-weight:500;
+            font-size:1.5rem;
+        }
+
+        .main-menu li:hover
+        {
+            background-color:#000;
+            color:#fff;
+        }
+        .main-menu li:hover a
+        {
+            color:inherit;
+        }
+        .sub-menu
+        {
+           
+            position:absolute;
+            left:0;
+            top:100%;
+            right:0;
+            height:0;
+            overflow:hidden;
+            padding:0 3rem;
+            background-color:#000;
+            color:#fff;
+            transition:0.3s;
+        }
+
+        
+        
+
+        .sub-menu h2
+        {
+            display:none;
+        }
+        .sub-menu li
+        {
+            display:inline-block;
+            padding:0.8rem 1.5rem;
+            font-weight:500;
+            font-size:1.5rem;
+        }
+
+       
+        .sub-menu a:hover
+        {
+            background-color:#fff;
+        }
+        .sub-menu a:hover 
+        {
+            color:#000;
+        }
+        .sub-menu a
+        {
+            display:block;
+            color:inherit;
+
+        }
+
+        .slider
+        {
+            height:300px;
+            position:relative;
+            z-index:99;
+        }
+        .slider .container h2
+        {
+            display:none;
+        }
+
+        .slider .inner
+        {
+            width:100%;
+            height:300px;
+            position:relative;
+            overflow:hidden;
+        }
+
+        .slider .img-box
+        {
+            position:absolute;
+            left:0;
+            top:50%;
+            z-index:10;
+            transform:translateY(-50%);
+            opacity: 0;
+            transition:1s;
+        }
+
+        .slider .img-box:first-child
+        {
+            opacity: 1;
+        }
+
+        .pager
+        {
+            position:absolute;
+            left:50%;
+            bottom:1rem;
+            z-index:20;
+            transform: translateX(-50%);
+        }
+
+        .pager span
+        {
+            display:inline-block;
+            width:1rem;
+            height:1rem;
+            margin:0 0.5rem;
+            border-radius: 50%;
+            background-color:#999;
+            text-indent: 999999px;
+        }
+
+        .pager span:hover
+        {
+            background-color:#000;
+            cursor:pointer;
+        }
+        
+        
+       
+
+    </style>
+</head>
+<body>
+
+    <div class="wrap">
+        <header class="header">
+            <div class="container">
+                <div class="inner clearfix">
+                    <h1 class="logo f-left"><a href="#">로고</a></h1>
+                    <nav class="nav f-right">
+                        <ul class="main-menu">
+                            <h2>메인메뉴</h2>
+                            <li class="menu" id="menu01"><a href="#">MENU-1</a></li>
+                            <li class="menu" id="menu01"><a href="#">MENU-2</a></li>
+                            <li class="menu" id="menu01"><a href="#">MENU-3</a></li>
+                            <li class="menu" id="menu01"><a href="#">MENU-4</a></li>
+                        </ul>
+                        <div class="sub-menu clearfix">
+                            <ul class="clearfix f-right">
+                                <h2>서브메뉴</h2>
+                                <li class="f-left">
+                                    <a href="#">subMenu-1</a>
+                                    <a href="#">subMenu-2</a>
+                                    <a href="#">subMenu-3</a>
+                                    <a href="#">subMenu-4</a>
+                                </li>
+                                <li class="f-left">
+                                    <a href="#">subMenu-1</a>
+                                    <a href="#">subMenu-2</a>
+                                    <a href="#">subMenu-3</a>
+                                    <a href="#">subMenu-4</a>
+
+                                </li>
+                                <li class="f-left">
+                                    <a href="#">subMenu-1</a>
+                                    <a href="#">subMenu-2</a>
+                                    <a href="#">subMenu-3</a>
+                                    <a href="#">subMenu-4</a>
+                                </li>
+                                <li class="f-left">
+                                    <a href="#">subMenu-1</a>
+                                    <a href="#">subMenu-2</a>
+                                    <a href="#">subMenu-3</a>
+                                    <a href="#">subMenu-4</a>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                    </nav>
+
+                </div>
+
+            </div>
+        </header>
+        <section class="sec slider">
+            <div class="container">
+                <h2>슬라이더</h2>
+                <div class="inner">
+                    <div class="img-box">
+                        <a href="#">
+                            <img src="./images/tiger1.jpg" alt="슬라이더1">
+                        </a>
+                    </div>
+                    <div class="img-box">
+                        <a href="#">
+                            <img src="./images/cat2.jpg" alt="슬라이더2">
+                        </a>
+                    </div>
+                    <div class="img-box">
+                        <a href="#">
+                            <img src="./images/cat3.jpg" alt="슬라이더3">
+                        </a>
+                    </div>
+
+                    <p class="pager">
+                        <span index-num="0" id="btn-slide01">1</span>
+                        <span index-num="1" id="btn-slide02">2</span>
+                        <span  index-num="2"id="btn-slide03">3</span>
+                    </p>
+                   
+                            
+                </div>
+            </div>
+        </section>
+        <section class="sec main">
+           
+            <div class="container">
+                <h2>메인</h2>
+                <div class="inner clearfix">
+                    <article class="notice">
+                        <h3>공지사항</h3>
+                        <div class="notice-txt clearfix">
+                            <div class="title f-left">title</div>
+                            <div class="date f-left">date</div>
+                            <div class="writer f-left">작성자</div>
+                        <div class="notice-txt clearfix">
+                            <div class="title f-left">[긴급] 코로나19로 인한 영업시간 조정 안내</div>
+                            <div class="date f-left">2022-02-23</div>
+                            <div class="writer f-left">점장</div>
+
+                        <div class="notice-txt clearfix">
+                            <div class="title f-left">새봄 맞이 3월 이벤트 안내</div>
+                            <div class="date f-left">2022-02-22</div>
+                            <div class="writer f-left">점장</div>
+
+                        <div class="notice-txt clearfix">
+                            <div class="title f-left">월간 회원을 위한 특별한 혜택</div>
+                            <div class="date f-left">2022-02-01</div>
+                            <div class="writer f-left">점장</div>
+
+                        <div class="notice-txt clearfix">
+                            <div class="title f-left">SNS에 자랑하고 사은품 받자</div>
+                            <div class="date f-left">2022-01-25</div>
+                            <div class="writer f-left">점장</div>
+                        </div>
+                    </article>
+
+                    <article class="gallery">
+                        <h3>갤러리</h3>
+                        <ul class="gallery-list clearfix">
+                            <li class="f-left">
+                                <div class="img-box"><a href="#"><img src="./images/animal1.jpg" alt="갤러리1"></a></div>
+                            </li>
+                            <li class="f-left">
+                                <div class="img-box"><a href="#"><img src="./images/animal2.jpg" alt="갤러리2"></a></div>
+                            </li>
+                            <li class="f-left">
+                                <div class="img-box"><a href="#"><img src="./images/animal3.jpg" alt="갤러리3"></a></div>
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article class="banner">
+                        <h3>배너</h3>
+                        <div class="img-box"><a href="#"><img src="./images/panda.jpg" alt="배너"></a></div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <footer class="footer">
+            <div class="container">
+                <div class="inner clearfix">
+                    <h2 class="f-left"><a href="#">로고</a></h2>
+                    <address class="f-left">
+                        Copyright KIM
+                    </address>
+                    <select class="f-left">
+                        <option disabled>패밀리 사이트</option>
+                        <option value="01">패밀리 상사</option>
+                        <option value="02">패밀리 전자</option>
+                        <option value="03">패밀리 화학</option>
+                        <option value="04">패밀리 조선</option>
+                    </select>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <div class="modal">
+        <div class="container">
+            <div class="inner">
+                <div class="modal-tit">
+                    모달타이틀
+                </div>
+                <div class="modal-txt">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint voluptatum reiciendis, pariatur veritatis eius aut? Mollitia debitis consequuntur quo hic aliquam quos recusandae! Odit accusamus minima culpa exercitationem nam asperiores!
+                </div>
+                <div class="btn-modal-close">
+                    닫기
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        let mainNavEl=document.querySelector('.main-menu');
+        let subNavEl=document.querySelector('.sub-menu');
+        
+        function subNav(subH,pTop,pBottom)
+        {
+            subNavEl.style.height=subH
+            subNavEl.style.paddingTop=pTop;
+            subNavEl.style.paddingBottom=pBottom;
+        }
+        
+
+        // 서브메뉴 호출
+        mainNavEl.addEventListener('mouseenter',function()
+        {
+            subNav('180px','10px','20px');
+        })
+        subNavEl.addEventListener('mouseleave',function()
+        {
+            subNav('0','0','0');
+        })
+
+        let slideEls=document.querySelectorAll('.slider .img-box');
+        let selectIdx=1;
+
+        function changeSlide(idx)
+        {
+            for(let cnt=0;cnt<slideEls.length;cnt++)
+            {
+                slideEls[cnt].style.opacity='0';
+            }
+            slideEls[idx].style.opacity='1';
+        }
+
+        
+
+        setInterval(function()
+        {
+            if(selectIdx>2)
+            {
+                selectIdx=0;
+            }
+            changeSlide(selectIdx++);
+        },3000)
+
+        let btnSls=document.querySelectorAll('.pager span');
+        
+        for(let idx=0;idx<btnSls.length;idx++)
+        {
+            btnSls[idx].addEventListener('click',function()
+            {
+               selectIdx=Number(this.getAttribute('index-num'));
+               changeSlide(selectIdx++);
+            })
+        }
+
+        // let btnSl1=document.querySelector('#btn-slide01')
+        // let btnSl2=document.querySelector('#btn-slide02')
+        // let btnSl3=document.querySelector('#btn-slide03')
+        
+        
+
+        // 슬라이드 버튼
+        // btnSl1.addEventListener('click',function()
+        // {
+        //     selectIdx=0;
+        //     changeSlide(selectIdx++);
+        // })
+
+        // btnSl2.addEventListener('click',function()
+        // {
+        //     selectIdx=1;
+        //     changeSlide(selectIdx++);
+        // })
+
+        // btnSl3.addEventListener('click',function()
+        // {
+        //     selectIdx=2;
+        //     changeSlide(selectIdx++);
+        // })
+    </script>
+
+
+    <script>
+        // $('.main-menu').mouseenter(function()
+        // {
+        //     $('.sub-menu').slideDown(300);
+        // });
+        // $('.sub-menu').mouseleave(function()
+        // {
+        //     $('.sub-menu').slideUp(300);
+        // })
+        // let idx=1;
+        // setInterval(function()
+        // {
+        //     if(idx>2)
+        //         idx=0;
+
+        //     $('.slider .img-box').css('opacity','0')
+        //     $('.slider .img-box').eq(idx++).css('opacity','1')
+            
+        // },3000)
+    </script>
+</body>
+</html>
