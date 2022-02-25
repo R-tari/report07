@@ -26,6 +26,7 @@ img
     width:100%;
     max-width:1200px;
     margin:0 auto;
+    overflow:hidden;
 }
 .container
 {
@@ -83,7 +84,7 @@ img
     display:flex;
     flex-flow:row wrap;
     justify-content: space-between;  
-    overflow:hidden;
+    z-index:100;
     
 
     
@@ -129,11 +130,14 @@ img
     grid-template-columns: repeat(7,1fr);
     width:100%;
     background-color:rgba(0,0,0,0.5);
-    position:fixed;
-    top:100px;
-    bottom:900px;
-    z-index:2;
+    position:absolute;
+    left:0;
+    top:100%;
+    right:0;
+    bottom:0;
+    height:0px;
     overflow: hidden;
+    background-color:rgba(0,0,0,0.8);
     transition:0.3s;
 }
 
@@ -166,12 +170,6 @@ img
 }
 
 
-.sec-slide
-{
-    
-    overflow:hidden;
-    z-index:1;
-}
 
 .sec-slide .container
 {
@@ -181,6 +179,7 @@ img
     overflow: hidden;
     transform:translateX(-0px);
     transition:0.3s;
+    z-index: 1;
 }
 
 .inner

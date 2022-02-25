@@ -10,13 +10,13 @@
         {
             Nav[i].addEventListener('mouseenter',function()
             {
-                subNav.style.bottom='705px';    
+                subNav.style.height='160px';    
             })
         }
 
         subNav.addEventListener('mouseleave',function()
         {
-            subNav.style.bottom='900px';
+            subNav.style.height='0px';
         })
         
         function slide()
